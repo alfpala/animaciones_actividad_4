@@ -1,0 +1,178 @@
+  body, html {
+      height: 100%;
+    }
+    .layout {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "filters"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: #0d6efd;
+      color: white;
+      padding: 1rem;
+    }
+
+    .filters {
+      grid-area: filters;
+      background: #f8f9fa;
+      padding: 1rem;
+      border-bottom: 1px solid #dee2e6;
+      /*display: flex;*/
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-around;
+    }
+
+    main {
+      grid-area: main;
+      padding: 1.5rem;
+      background: #ffffff;
+    }
+
+    footer {
+      grid-area: footer;
+      background: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer a:hover i.bi-facebook {
+  color: #1877f2; /* Azul Facebook */
+}
+
+footer a:hover i.bi-instagram {
+  color: #e4405f; /* Rosa Instagram */
+}
+
+footer a:hover i.bi-twitter-x {
+  color: #000000; /* Negro Twitter X */
+}
+
+footer a:hover i.bi-linkedin {
+  color: #0a66c2; /* Azul LinkedIn */
+}
+
+/* Efecto suave en la transición */
+footer a i {
+  transition: color 0.3s ease;
+}
+
+    /* Grilla de productos */
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Tarjeta de producto */
+    .tarjeta-producto {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.3s;
+      background: #f8f9fa;
+    }
+
+    .tarjeta-producto:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tarjeta-producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .tarjeta-producto-body {
+      flex-grow: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+  
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+/* Fondo personalizado para las tarjetas */
+.card,
+.tarjeta-producto {
+  background-color: #e9f0ff; /* Azul claro */
+  transition: background-color 0.3s ease;
+}
+
+/* Aumento suave del texto al hacer hover */
+.card:hover .card-title,
+.card:hover .card-text,
+.tarjeta-producto:hover .card-title,
+.tarjeta-producto:hover .card-text {
+  font-size: calc(1em + 2pt);
+  transition: font-size 0.3s ease;
+}
+
+/* Imágenes en blanco y negro */
+.card-img-top,
+.tarjeta-producto img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Mostrar imagen en color al pasar el cursor */
+.card:hover .card-img-top,
+.tarjeta-producto:hover img {
+  filter: grayscale(0%);
+}
+
+
+    /* Responsive para pantallas mayores a 576px */
+    @media (min-width: 576px) {
+      .layout {
+        grid-template-areas:
+          "header header"
+          "filters main"
+          "footer footer";
+        grid-template-columns: 250px 1fr;
+      }
+
+      .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+      }
+    }
+
+/* Solo si quieres centrar los elementos en móviles */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+  /* Estilos para la transición de la imagen */
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.5s ease;
+}
+
+/* Efecto de zoom al pasar el mouse */
+.image-container:hover img {
+  transform: scale(1.1); /* Hace un zoom suave */
+}
